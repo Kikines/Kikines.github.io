@@ -1,0 +1,182 @@
+.pricing {
+    background-color: rgb(73,59,78);
+    background-blend-mode: initial;
+    background-image: url(../img/pricing-mobile.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 30%;
+    font-family: 'Montserrat', sans-serif;
+    &__title {
+        font-size: calcFluidSize(28,42,320,480);
+        @include text ($primary-color, 700, capitalize, center);
+    }
+    &__blocks-container {
+        align-items: center;
+        justify-items: center;
+        padding-top: calcFluidSize(53,57,320,480);
+        padding-bottom: 95px;
+        @include grid (1fr, initial, 14px);
+    }
+    &__item {
+        width: 100%;
+        max-width: 257px;
+        height: 489px;
+        background-color:  rgba(255, 255, 255, 0.11);
+        &_active {
+            height: auto;
+            max-width: 299px;
+            background-color: rgba(0, 0, 0, 0.13);
+        }
+    }
+    &__item-category {
+        background-color: rgba(255, 255, 255, 0.06);
+        @include text ($primary-color, 400, uppercase, center);
+        @include fontsize-padding (24px, 46px 0 34px);
+        &_active {
+            background-color:rgba(0, 0, 0, 0.11);
+            padding-top: 51px;
+        }
+    }
+    &__item-price {
+        color: $primary-color;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 32px;
+        &_bold {
+            font-weight: 700;
+        }
+        &_active {
+            font-size: 82px;
+            margin-top: 15px;
+        }
+    }
+    &__item-term {
+        font-size: 14px;
+        margin-top: 24px;
+        @include text (rgba(255, 255, 255, 0.25), 400, uppercase, center);
+        &_active {
+            margin-top: 21px;
+        }
+    }
+    &__item-line {
+        background-color:  #8d81ac;
+        width: 60px;
+        height: 5px;
+        margin: 39px auto 0;
+        &_active {
+            margin: 49px auto 0;
+        }
+    }
+    &__item-possibilities {
+        font-size: 16px;
+        margin-top: 31px;
+        @include text ($primary-color, 400, capitalize, center);
+        &_active {
+            margin-top: 41px;
+        }
+        &_extra {
+            margin-top: 10px;
+        }
+    }
+}
+    
+.button {
+    &_type_purchase {
+        display: block;
+        width: 160px;
+        margin: 42px auto 38px;
+        @include text ($primary-color, 400, uppercase, center);
+        @include fontsize-padding (15px, 16px 0 15px);
+    }
+    &_color_crystal-white {
+        background-color:  rgba(255, 255, 255, 0.15);
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    }
+    &_big {
+        width: 190px;
+        margin: 82px auto 47px;
+        @include fontsize-padding (16px, 21px 0 19px);
+    }
+    &_moved_down {
+        margin: 68px auto 38px;
+    }
+}
+
+@include mobiles {
+    .pricing {
+        &__title {
+            line-height: calcFluidSize(40,55,320,480);
+            padding: 0 calcFluidSize(18,33,320,480);
+        }
+    }
+}
+
+@include small-mobile {
+    .pricing {
+        width: 320px;
+        &__title {
+            @include fontsize-padding (28px, 0 18px);
+        }
+    }
+}
+
+@include tablet {
+    .pricing {
+        background-image: url(../img/pricing-desktop.png);
+        background-size: cover;
+        &__title {
+            @include fontsize-padding (42px, 0 33px);
+        }
+        &__blocks-container {
+            justify-content: center;
+            @include grid (1fr 1fr, initial, 42px);
+        }
+        &__item {
+            width: 91%;
+            max-width: 257px;
+            justify-self: left;
+            margin-left: 21px;
+            &_align_right {
+                justify-self: right;
+                margin-left: 0;
+            }
+            &_moved_left {
+                margin-right: 21px;
+            }
+            &_active {
+                width: 100%;
+                max-width: 299px;
+            }
+        }
+    }
+}
+
+@media (min-width: #{$tablet-width}) and (max-width: #{$mid-tablet-width}){
+    .pricing {
+        background-image: url(../img/pricing-tablet.png);
+    }
+}
+
+@include desktops{
+    .pricing {
+        background-image: url(../img/pricing-desktop.png);
+        background-size: cover;
+        &__title {
+            font-size: calcFluidSize(42,48,993,1200);
+        }
+        &__blocks-container {
+            justify-content: center;
+            @include grid (22% 22% 25% 22%, 14px, initial);
+        }
+    }
+}
+
+@include large-desktop {
+    .pricing {
+        &__title {
+            font-size: 48px;
+        }
+    }
+}

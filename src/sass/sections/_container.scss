@@ -1,0 +1,26 @@
+.container {
+    padding: 0 10px 0;
+    box-sizing: border-box;
+    &_flex {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    }
+    &_relative {
+        position: relative;
+    }
+}
+@include tablet {
+    .container {
+        &_flex {
+            align-items: flex-start;
+        }
+    }
+}
+@include large-desktop {
+    .container {
+        width: #{$large-desktop-width - 1px};
+        margin: 0 auto;
+    }
+}

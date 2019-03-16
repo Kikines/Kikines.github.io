@@ -1,0 +1,92 @@
+@function calcFluidSize($f-min, $f-max, $v-min, $v-max) {
+    $k: ($f-max - $f-min)/($v-max - $v-min);
+    $b: $f-min - $k * $v-min;
+  
+    $b: $b * 1px;
+  
+    @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin mobile {
+    @media (min-width : #{$mobile-width}) and (max-width : #{$large-mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin large-mobile {
+    @media (min-width : #{$large-mobile-width}) and (max-width : #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width : #{$tablet-width}) and (max-width : #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width : #{$desktop-width}) and (max-width : #{$large-desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin large-desktop {
+    @media (min-width : #{$large-desktop-width}) {
+        @content;
+    }
+}
+
+@mixin small-mobile {
+    @media (max-width : #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktops {
+    @media (min-width : #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin mobiles {
+    @media (max-width : #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+@mixin tablet-desktop {
+    @media (min-width : #{$tablet-width}) and (max-width: #{$large-desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin text ($color, $font-weight, $text-transform:none, $text-align:left) {
+    color: $color;
+    text-align: $text-align;
+    text-transform: $text-transform;
+    font-weight: $font-weight;
+}
+@mixin flex ($flex-wrap, $align-items: initial, $justify-content: initial) {
+    display: flex;
+    flex-wrap: $flex-wrap;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+@mixin position($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+@mixin fontsize-padding ($font-size, $padding) {
+    font-size: $font-size;
+    padding: $padding;
+}
+@mixin  grid ($grid-template-columns, $grid-column-gap, $grid-row-gap) {
+    display: grid;
+    grid-template-columns: $grid-template-columns;
+    grid-column-gap: $grid-column-gap;
+    grid-row-gap: $grid-row-gap;
+
+}
+
+

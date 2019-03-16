@@ -1,0 +1,123 @@
+.features {
+    &__title {
+        font-family: 'Montserrat',sans-serif;
+        @include text (#635c73, 700, uppercase, center );
+        @include fontsize-padding (calcFluidSize(26,42,320,480), calcFluidSize(121,135,320,480) 0 calcFluidSize(24,54,320,480));
+    }
+    &__info {
+        font-family: 'Lato', sans-serif;
+        line-height: calcFluidSize(20,27,320,480);
+        @include text(#5b5b5b, 400, none, center);
+        @include fontsize-padding (calcFluidSize(14,16,320,480), 0 calcFluidSize(25,14,320,480));
+    }
+}
+.git-buttons-container {
+    padding-top: 16px;
+    padding-bottom: calcFluidSize(88,78,320,480);
+    @include flex(wrap, initial, center);
+    &__btn {
+        width: 110px;
+        height: 26px;
+        margin-left: 10px;
+        margin-top: 20px;
+        display: flex;
+        border: 1px solid #c0bfbf;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    &__btn-func {
+        width: 60%;
+        background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+        border-right: 1px solid #c0bfbf;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        @include flex (initial, center, space-evenly);
+    }
+    &__btn-name {
+        font-size: 12.5px;
+        color: #24292e;
+        font-weight: 700;
+        font-family: sans-serif;
+    }
+    &__btn-counter {
+        font-size: 11px;
+        font-family: sans-serif;
+        width: 40%;
+        line-height: 26px;
+        @include text(#24292e, 700, none, center)
+    }
+}
+
+@include mobiles {
+    .features {
+        &__title {
+            line-height: calcFluidSize(30,45,320,480);
+        }
+    }
+}
+
+@include small-mobile {
+    .features {
+        width: 320px;
+        &__title {
+            @include fontsize-padding(26px, 121px 0 24px);
+            line-height: unset;
+        }
+        &__info {
+            @include fontsize-padding(14px, 0 25px);
+        }
+    }
+
+    .git-buttons-container {
+        padding-bottom: 88px;
+    }
+}
+
+@media (min-width: #{$tablet-width}) and (max-width: #{$mid-tablet-width}){
+    .features{
+        &__title {
+            @include fontsize-padding(42px, calcFluidSize(121,156,481,768) 0 calcFluidSize(54,38,481,768));
+        }
+        &__info {
+            @include fontsize-padding(calcFluidSize(16,21,481,768), 0 calcFluidSize(14,50,481,768));
+        }  
+    }
+
+    .git-buttons-container {
+        padding-bottom: calcFluidSize(78,98,481,768);
+    }
+}
+
+@media (min-width: #{$mid-tablet-width + 1px}) {
+    .features {
+        &__title {
+            @include fontsize-padding(calcFluidSize(42,54,769,1200), calcFluidSize(156,129,769,1200) 0 38px);
+        }
+        &__info {
+            line-height: 29px;
+            @include fontsize-padding(21px, 0 calcFluidSize(50,145,769,1200));
+        }
+    }
+
+    .git-buttons-container {
+        padding-bottom: calcFluidSize(98,70,769,1200);
+        padding-top: 16px;
+    }
+}
+
+@include large-desktop {
+    .features {
+        &__title {
+            font-size: 54px;
+            padding-top: 129px;
+            @include fontsize-padding(54px, 129px 0 38px);
+        }
+        &__info {
+            padding: 0 145px;
+        }
+    }
+    
+    .git-buttons-container {
+        padding-bottom: 70px;
+    }
+}
