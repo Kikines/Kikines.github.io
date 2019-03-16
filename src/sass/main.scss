@@ -1,18 +1,10 @@
 @import 'reset';
 @import 'variables';
 @import 'mixins';
+
 @import 'sections/header';
-
-
-@import 'sections/fork';
-
-
-@import 'sections/revolutionary';
-
-
-@import 'sections/about-fork';
-
-
+@import 'sections/home';
+@import 'sections/features';
+@import 'sections/feedback';
 @import 'sections/pricing';
-
-@import 'sections/container'
+@import 'sections/container';

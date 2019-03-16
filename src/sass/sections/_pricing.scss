@@ -115,6 +115,7 @@
 
 @include small-mobile {
     .pricing {
+        margin-top: -1px;
         width: 320px;
         &__title {
             @include fontsize-padding (28px, 0 18px);
