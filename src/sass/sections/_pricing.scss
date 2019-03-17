@@ -134,6 +134,8 @@
         &__blocks-container {
             justify-content: center;
             @include grid (1fr 1fr, initial, 42px);
+            padding-top: 47px;
+            padding-bottom: 82px;
         }
         &__item {
             width: 91%;
@@ -158,6 +160,10 @@
 @media (min-width: #{$tablet-width}) and (max-width: #{$mid-tablet-width}){
     .pricing {
         background-image: url(../img/pricing-tablet.png);
+        &__blocks-container {
+            padding-top: calcFluidSize(57, 47, 481, 768);
+            padding-bottom: calcFluidSize(95, 82, 481, 768);
+        }
     }
 }
 
@@ -170,6 +176,8 @@
         }
         &__blocks-container {
             justify-content: center;
+            padding-top: calcFluidSize(47, 71, 993, 1200);
+            padding-bottom: calcFluidSize(82, 97, 993, 1200);
             @include grid (22% 22% 25% 22%, 14px, initial);
         }
     }
@@ -179,6 +187,10 @@
     .pricing {
         &__title {
             font-size: 48px;
+        }
+        &__blocks-container {
+            padding-top: 71px;
+            padding-bottom: 97px;
         }
     }
 }
